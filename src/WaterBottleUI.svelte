@@ -1,9 +1,9 @@
 <script>
-    let { waterAmount, waterTemp, waterGoal, waterConsumedToday, maxWaterCapacity, sanitizationStatus, powerBankBatteryPercentage, waterIsStale } = $props();
+    let { displayWaterAmount, displayWaterTemp, displayWaterGoal, displayWaterConsumedToday, maxWaterCapacity, sanitizationStatus, powerBankBatteryPercentage, waterIsStale, volumeUnit, tempUnit } = $props();
 </script>
 
-<p>Water Amount Remaining: {waterAmount} oz</p>
-<p>Water Temperature: {waterTemp}°F</p>
-<p>Daily Goal: {waterConsumedToday} oz / {waterGoal} oz</p>
+<p>Water Amount Remaining: {displayWaterAmount} {volumeUnit}</p>
+<p>Water Temperature: {displayWaterTemp} {tempUnit}</p>
+<p>Daily Goal: {displayWaterConsumedToday} {volumeUnit} / {displayWaterGoal} {volumeUnit}</p>
 <p>Sanitization Light: {sanitizationStatus}</p>
 <p>Power Bank Battery: {powerBankBatteryPercentage}%</p>
