@@ -5,7 +5,7 @@
 </script>
 
 <h2>Test Controls</h2>
-<button onclick={drink}>Drink (2 oz)</button>
+<button onclick={drink}>Drink ({unitSystem === "Imperial" ? "2 oz" : "60 ml"})</button>
 <button onclick={refill}>Refill Water</button>
 <button onclick={stale}>Make Water Stale</button>
 <button onclick={empty}>Empty Water</button>

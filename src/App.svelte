@@ -10,6 +10,7 @@
   let maxWaterCapacity = $state(40); // in ounces
   let sanitizationStatus = $state("Off"); // Can be "Off", "Cleaning", "Clean", "Stale"
   let powerBankBatteryPercentage = $state(100);
+  let phoneBatteryPercentage = $state(100);
   let waterIsStale = $state(false);
   let unitSystem = $state("Imperial"); // Can be "Imperial" or "Metric"
   let cleanDuration = $state(5); // Duration for which the sanitization light stays green (in seconds)
@@ -74,11 +75,9 @@
       powerBankBatteryPercentage = 100;
     }
     function chargeDevice() {
-      if (powerBankBatteryPercentage >= 10) {
+      if (powerBankBatteryPercentage >= 10 && phoneBatteryPercentage <= 90) {
         powerBankBatteryPercentage -= 10;
-      }
-      else if (powerBankBatteryPercentage > 0) {
-        powerBankBatteryPercentage = 0;
+        phoneBatteryPercentage += 10;
       }
     }
     // Display units based on the selected unit system
@@ -108,7 +107,7 @@
   <div class="right-region">
     <section class="display-section">
       <h2>Water Bottle Display</h2>
-      <WaterBottleUI {displayWaterAmount} {displayWaterTemp} {displayWaterGoal} {displayWaterConsumedToday} {maxWaterCapacity} {sanitizationStatus} {powerBankBatteryPercentage} {waterIsStale} {volumeUnit} {tempUnit}/>
+      <WaterBottleUI {displayWaterAmount} {displayWaterTemp} {displayWaterGoal} {displayWaterConsumedToday} {maxWaterCapacity} {sanitizationStatus} {powerBankBatteryPercentage} {waterIsStale} {volumeUnit} {tempUnit} {phoneBatteryPercentage}/>
       <img class="bottle-sketch" src="WaterBottleSketch.png" alt="Water Bottle Sketch">
     </section>
   </div>
