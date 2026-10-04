@@ -242,7 +242,8 @@
     <section class="display-section">
       <h2>Water Bottle Display</h2>
       <WaterBottleUI {displayWaterAmount} {displayWaterTemp} {displayWaterGoal} {displayWaterConsumedToday} {maxWaterCapacity} {sanitizationStatus} {powerBankBatteryPercentage} {waterIsStale} {volumeUnit} {tempUnit} {phoneBatteryPercentage}/>
-      <img class="bottle-sketch" src="WaterBottleSketch.png" alt="Water Bottle Sketch">
+      <img class="bottle-sketch" src="WaterBottleSketchNew.png" alt="Water Bottle Sketch">
+      <img class="bottle-lid" src="WaterBottleLidSketch.png" alt="Water Bottle Lid Sketch">
     </section>
   </div>
 </div>
@@ -275,6 +276,12 @@
   }
   .bottle-sketch {
     max-height: 500px;
+    width: auto;
+    object-fit: contain;
+    margin-top: 15px;
+  }
+  .bottle-lid {
+    max-height: 300px;
     width: auto;
     object-fit: contain;
     margin-top: 15px;
