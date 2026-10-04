@@ -29,6 +29,7 @@
   let simulationTicks = 0;
   let roomTempWaterSeconds = 0; // Counter for how long the water has been at room temperature
   let staleSeconds = 0; // Counter for how long the water has been stale
+  let importantSimAction = $state("Idle");
 
   // Functions
   function drinkWater() {
@@ -130,15 +131,16 @@
       return;
     }
     deviceChargingInterval = setInterval(() => {
-      if (phoneBatteryPercentage >= 100 || powerBankBatteryPercentage < 10) {
+      if (phoneBatteryPercentage >= 100 || powerBankBatteryPercentage <= 0) {
         if (deviceChargingInterval !== null) {
           clearInterval(deviceChargingInterval);
           deviceChargingInterval = null;
         }
         return;
       }
-      phoneBatteryPercentage = Math.min(phoneBatteryPercentage + 10, 100);
-      powerBankBatteryPercentage -= 10;
+      const chargeAmount = Math.min(10, powerBankBatteryPercentage, 100 - phoneBatteryPercentage); // charge either 10%, whatever left in powerbank, or whatever is needed to reach 100% on the phone
+      phoneBatteryPercentage += chargeAmount;
+      powerBankBatteryPercentage -= chargeAmount;
     }, 2000); // Charge device 10% every 2 seconds, and decrease power bank by 10% every 2 seconds
   }
 
@@ -157,6 +159,7 @@
   function toggleSimulation() {
     isSimulating = !isSimulating;
     if (isSimulating) {
+      importantSimAction = "Nothing Yet ...";
       simulationInterval = setInterval(() => {
         simulationTicks += 1;
         if (waterAmount > 0 && waterTemp < 70) {
@@ -183,23 +186,28 @@
           }
         }
         if (waterAmount === 0) {
+          importantSimAction = "Refilled water!";
           refillWater(); // Refill water when empty
         }
         if (waterIsStale) {
           staleSeconds += 1; // Increment the counter for how long the water has been stale
           if (staleSeconds >= staleDuration) {
+            importantSimAction = "Emptied stale water!";
             emptyWater(); // Empty water when stale duration is reached
           }
         } else {
           staleSeconds = 0; // Reset if water is no longer stale
         }
         if (phoneBatteryPercentage === 20) {
+          importantSimAction = "Charging device...";
           chargeDevice(); // Charge device when phone battery is low (20%)
         }
         if (powerBankBatteryPercentage === 0) {
+          importantSimAction = "Charging power bank...";
           chargePowerBank(); // Charge power bank when battery is 0%
         }
         if (waterConsumedToday >= waterGoal) {
+          importantSimAction = "Goal reached!";
           // Stop the simulation
           if (simulationInterval !== null) {
             clearInterval(simulationInterval);
@@ -209,6 +217,7 @@
         }
       }, 1000);
     } else {
+      importantSimAction = "Paused";
       // Stop the simulation
       if (simulationInterval !== null) {
         clearInterval(simulationInterval);
@@ -227,7 +236,7 @@
       <p>Project Write Up: <a href="https://github.com/vasilevk33/vasilev-project-1/blob/main/README.md">Documentation</a></p>
       <button type="button">Info(Controls)</button>
     </section> 
-    <Controls drink = {drinkWater} refill = {refillWater} stale = {staleWater} empty = {emptyWater} chargeBank = {chargePowerBank} chargeDevice = {chargeDevice} displayGoal = {displayWaterGoal} volumeUnit = {volumeUnit} toggleSimulation = {toggleSimulation} bind:unitSystem = {unitSystem} bind:waterGoal = {waterGoal} bind:cleanDuration = {cleanDuration} bind:staleDuration = {staleDuration} bind:isSimulating = {isSimulating} />
+    <Controls drink = {drinkWater} refill = {refillWater} stale = {staleWater} empty = {emptyWater} chargeBank = {chargePowerBank} chargeDevice = {chargeDevice} displayGoal = {displayWaterGoal} volumeUnit = {volumeUnit} toggleSimulation = {toggleSimulation} bind:unitSystem = {unitSystem} bind:waterGoal = {waterGoal} bind:cleanDuration = {cleanDuration} bind:staleDuration = {staleDuration} bind:isSimulating = {isSimulating} bind:simulationAction = {importantSimAction} />
   </div>
   <div class="right-region">
     <section class="display-section">

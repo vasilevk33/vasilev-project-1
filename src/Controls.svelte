@@ -1,5 +1,5 @@
 <script>
-    let { drink, refill, stale, empty, chargeBank, chargeDevice, displayGoal, volumeUnit, toggleSimulation, isSimulating = $bindable(false),
+    let { drink, refill, stale, empty, chargeBank, chargeDevice, displayGoal, volumeUnit, toggleSimulation, isSimulating = $bindable(false), simulationAction = $bindable("Idle"),
     unitSystem = $bindable("Imperial"), waterGoal = $bindable(100), cleanDuration = $bindable(5), staleDuration = $bindable(10) 
     } = $props();
 </script>
@@ -11,9 +11,15 @@
 <button onclick={empty}>Empty Water</button>
 <button onclick={chargeBank}>Charge Power Bank (100%)</button>
 <button onclick={chargeDevice}>Charge External Device</button>
-<button onclick={toggleSimulation}>
-  {isSimulating ? "Pause Simulation" : "Start Simulation"}
-</button>
+<div class="simulation-panel">
+  <h3>Simulation</h3>
+  <button onclick={toggleSimulation}>
+    {isSimulating ? "Pause Simulation" : "Start Simulation"}
+  </button>
+  <p>
+    Important Status Update: {simulationAction}
+  </p>
+</div>
 <h2>Phone Controls</h2>
 <label> Daily Goal: {displayGoal} {volumeUnit}
 <input type="range" min="80" max="180" step="2" bind:value={waterGoal} />
