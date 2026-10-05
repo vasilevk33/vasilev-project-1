@@ -25,13 +25,17 @@
   button {
     display: block;
     width: 100%;
+    height: 38px;
+    box-sizing: border-box;
     padding: 10px 14px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 6px;
     background: #f0f0f0;
+    color: #222;
     font-size: 14px;
     font-weight: 500;
+    line-height: 16px;
     cursor: pointer;
     transition: background 0.2s;
   }

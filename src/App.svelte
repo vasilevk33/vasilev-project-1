@@ -318,7 +318,7 @@
 
         <div class="guide-item">
           <h4>🧪 Sanitization Alerts</h4>
-          <p><strong>Lid LED Ring:</strong> Flashes Yellow 🟡 during active cleaning (10s), Green 🟢 when sanitization completes successfully, Red 🔴 when water is stale, off otherwise.</p>
+          <p><strong>Cap LED Ring:</strong> Flashes Yellow 🟡 during active cleaning (10s), Green 🟢 when sanitization completes successfully, Red 🔴 when water is stale, off otherwise.</p>
           <p><strong>Cleaning Logic:</strong> Every time water is refilled, the bottle initiates a cleaning cycle.</p>
           <p><strong>Stale Water Logic:</strong> If water rests at or above 70°F for 10 continuous seconds it enters a stale state.</p>
           <p><strong>Manual Stale Button:</strong> "Make Water Stale" makes the water stale immediately.</p>
@@ -409,21 +409,25 @@
   }
 
   .info-btn {
+    display: block;
     width: 100%;
+    height: 38px;
+    box-sizing: border-box;
     margin-top: 10px;
-    padding: 8px 12px;
-    background: #f0fdf4;
-    border: 1px solid #86efac;
-    color: #166534;
+    padding: 10px 14px;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    color: #222;
     border-radius: 6px;
-    font-weight: 600;
-    font-size: 13px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
     cursor: pointer;
     transition: background 0.2s;
   }
 
   .info-btn:hover {
-    background: #dcfce7;
+    background: #e2e2e2;
   }
 
   .display-section {
@@ -529,5 +533,6 @@
     font-size: 13.5px;
     line-height: 1.5;
     color: #4b5563;
+    text-align: left;
   }
 </style>
