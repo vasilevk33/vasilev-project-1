@@ -61,7 +61,7 @@
         </div>
 
         <div class="setting">
-            <label>
+            <label for="daily-goal">
                 Daily Goal
 
                 <strong>
@@ -70,6 +70,7 @@
             </label>
 
             <input
+                id="daily-goal"
                 type="range"
                 min="80"
                 max="180"
@@ -103,7 +104,7 @@
         </div>
 
         <div class="setting">
-            <label>
+            <label for="clean-duration">
                 Clean Alert Duration
 
                 <strong>
@@ -112,6 +113,7 @@
             </label>
 
             <input
+                id="clean-duration"
                 type="range"
                 min="1"
                 max="30"
@@ -121,7 +123,7 @@
         </div>
 
         <div class="setting">
-            <label>
+            <label for="stale-duration">
                 Stale Alert Duration
 
                 <strong>
@@ -130,6 +132,7 @@
             </label>
 
             <input
+                id="stale-duration"
                 type="range"
                 min="1"
                 max="30"
@@ -149,7 +152,7 @@
         position: relative;
 
         width: 310px;
-        height: 700px;
+        height: 640px;
 
         box-sizing: border-box;
 
@@ -265,13 +268,6 @@
 
     .phone-content {
         margin-top: 5px;
-    }
-
-    .small-title {
-        margin: 0;
-
-        font-size: 10px;
-        letter-spacing: 2px;
     }
 
     h2 {

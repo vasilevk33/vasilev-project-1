@@ -74,7 +74,7 @@
 <style>
     .bottle-cap {
         position: relative;
-        width: 350px;
+        width: 300px;
 
         container-type: inline-size;
     }
@@ -86,9 +86,9 @@
         height: auto;
     }
 
-    /* -------------------------
+    /*
        Sanitization outer ring
-       ------------------------- */
+    */
 
     .sanitization-ring {
         position: absolute;
@@ -125,9 +125,9 @@
         animation: pulse 0.8s ease-in-out infinite;
     }
 
-    /* -------------------------
+    /*
        Hydration inner ring
-       ------------------------- */
+    */
 
     .hydration-ring {
         position: absolute;
@@ -146,10 +146,6 @@
                 #666 0deg
             );
 
-        /*
-         * Cuts out the middle without covering
-         * the Google Drawing underneath.
-         */
         -webkit-mask:
             radial-gradient(
                 farthest-side,

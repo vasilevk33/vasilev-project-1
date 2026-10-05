@@ -19,7 +19,7 @@
 
 <div class="bottle-side">
 
-    <!-- Your bottle drawing -->
+    <!-- Bottle drawing -->
     <img
         class="bottle-image"
         src="/WaterBottleSketchNew.png"
@@ -59,7 +59,7 @@
 <style>
     .bottle-side {
         position: relative;
-        width: 250px;
+        width: 240px;
         container-type: inline-size;
     }
 
@@ -70,16 +70,11 @@
     }
 
     /*
-     * Invisible area representing the bottle's
-     * water-level sensor.
+     * Invisible area representing the bottle's water-level sensor.
      */
     .water-track {
         position: absolute;
 
-        /*
-         * These correspond to the vertical slot
-         * drawn on the bottle.
-         */
         left: 25%;
         top: 25.3%;
         bottom: 13.96%;
@@ -112,7 +107,7 @@
     }
 
     /*
-     * Percentage stays at the TOP of the
+     * Percentage stays at the top of the
      * currently filled water level.
      */
     .water-fill span {
@@ -139,10 +134,6 @@
     .temperature-display {
         position: absolute;
 
-        /*
-        * Position over the temperature screen
-        * drawn in the bottle image.
-        */
         left: 52%;
         top: 30%;
 
