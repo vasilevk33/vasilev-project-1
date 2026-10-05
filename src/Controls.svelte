@@ -20,37 +20,3 @@
     Important Status Update: {simulationAction}
   </p>
 </div>
-<h2>Phone Controls</h2>
-<label> Daily Goal: {displayGoal} {volumeUnit}
-<input type="range" min="80" max="180" step="2" bind:value={waterGoal} />
-</label>
-<label>
-  <input type="radio" bind:group={unitSystem} value="Imperial" />
-  Imperial
-</label>
-<label>
-  <input type="radio" bind:group={unitSystem} value="Metric" />
-  Metric
-</label>
-  
-<label>
-Clean Alert (Green Light): {cleanDuration}s
-<input 
-    type="range" 
-    min="1" 
-    max="30" 
-    step="1" 
-    bind:value={cleanDuration} 
-/>
-</label>
-
-<label>
-Stale Alert (Red Light): {staleDuration}s
-<input 
-    type="range" 
-    min="1" 
-    max="30" 
-    step="1" 
-    bind:value={staleDuration} 
-/>
-</label>

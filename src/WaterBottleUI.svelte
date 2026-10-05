@@ -1,10 +1,53 @@
 <script>
-    let { displayWaterAmount, displayWaterTemp, displayWaterGoal, displayWaterConsumedToday, maxWaterCapacity, sanitizationStatus, powerBankBatteryPercentage, waterIsStale, volumeUnit, tempUnit, phoneBatteryPercentage } = $props();
+    import WaterBottleSide from "./WaterBottleSide.svelte";
+    import WaterBottleCap from "./WaterBottleCap.svelte";
+    import PhoneUI from "./PhoneUI.svelte";
+
+    let {
+        displayWaterAmount,
+        displayWaterTemp,
+        displayWaterGoal,
+        displayWaterConsumedToday,
+        displayMaxWaterCapacity,
+        sanitizationStatus,
+        powerBankBatteryPercentage,
+        waterIsStale,
+        volumeUnit,
+        tempUnit,
+        phoneBatteryPercentage,
+        isPowerBankCharging,
+
+        unitSystem = $bindable("Imperial"),
+        waterGoal = $bindable(100),
+        cleanDuration = $bindable(5),
+        staleDuration = $bindable(10)
+    } = $props();
 </script>
 
-<p>Water Amount Remaining: {displayWaterAmount} {volumeUnit}</p>
-<p>Water Temperature: {displayWaterTemp} {tempUnit}</p>
-<p>Daily Goal: {displayWaterConsumedToday} {volumeUnit} / {displayWaterGoal} {volumeUnit}</p>
-<p>Sanitization Light: {sanitizationStatus}</p>
-<p>Power Bank Battery: {powerBankBatteryPercentage}%</p>
-<p>Phone Battery: {phoneBatteryPercentage}%</p>
+<WaterBottleSide
+    {displayWaterAmount}
+    {displayWaterTemp}
+    {displayMaxWaterCapacity}
+    {volumeUnit}
+    {tempUnit}
+    {powerBankBatteryPercentage}
+    {isPowerBankCharging}
+/>
+
+<WaterBottleCap
+    {displayWaterGoal}
+    {displayWaterConsumedToday}
+    {sanitizationStatus}
+/>
+
+<PhoneUI
+    {displayWaterAmount}
+    {displayWaterGoal}
+    {displayWaterConsumedToday}
+    {volumeUnit}
+    {phoneBatteryPercentage}
+    bind:unitSystem
+    bind:waterGoal
+    bind:cleanDuration
+    bind:staleDuration
+/>

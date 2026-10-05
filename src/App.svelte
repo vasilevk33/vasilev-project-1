@@ -10,7 +10,7 @@
   let maxWaterCapacity = $state(40); // in ounces
   let sanitizationStatus = $state("Off"); // Can be "Off", "Cleaning", "Clean", "Stale"
   let powerBankBatteryPercentage = $state(100);
-  let phoneBatteryPercentage = $state(100);
+  let phoneBatteryPercentage = $state(50);
   /** @type {ReturnType<typeof setInterval> | null} */
   let deviceChargingInterval = null;
   /** @type {ReturnType<typeof setInterval> | null} */
@@ -21,6 +21,7 @@
   let staleDuration = $state(10); // Duration for which the sanitization light stays red (in seconds)
   /** @type {ReturnType<typeof setInterval> | null} */
   let activeAlertTimer = null;
+  let isPowerBankCharging = $state(false);
 
   // Simulation Variables
   let isSimulating = $state(false); // Flag to indicate if simulation is running
@@ -114,12 +115,14 @@
     if (powerBankChargingInterval !== null) {
       return;
     }
+    isPowerBankCharging = true;
     powerBankChargingInterval = setInterval(() => {
       if (powerBankBatteryPercentage >= 100) {
         if (powerBankChargingInterval !== null) {
           clearInterval(powerBankChargingInterval);
           powerBankChargingInterval = null;
         }
+        isPowerBankCharging = false;
         return;
       }
       powerBankBatteryPercentage = Math.min( powerBankBatteryPercentage + 10, 100);
@@ -151,6 +154,8 @@
     unitSystem === "Imperial" ? Math.round(waterGoal): Math.round(waterGoal * 29.5735));
   let displayWaterConsumedToday = $derived(
     unitSystem === "Imperial" ? Math.round(waterConsumedToday): Math.round(waterConsumedToday * 29.5735));
+  let displayMaxWaterCapacity = $derived(
+    unitSystem === "Imperial" ? Math.round(maxWaterCapacity): Math.round(maxWaterCapacity * 29.5735));
   let displayWaterTemp = $derived(
     unitSystem === "Imperial" ? Math.round(waterTemp): Math.round((waterTemp - 32) * 5/9));
   let volumeUnit = $derived(unitSystem === "Imperial" ? "oz" : "ml");
@@ -241,9 +246,11 @@
   <div class="right-region">
     <section class="display-section">
       <h2>Water Bottle Display</h2>
-      <WaterBottleUI {displayWaterAmount} {displayWaterTemp} {displayWaterGoal} {displayWaterConsumedToday} {maxWaterCapacity} {sanitizationStatus} {powerBankBatteryPercentage} {waterIsStale} {volumeUnit} {tempUnit} {phoneBatteryPercentage}/>
+      <WaterBottleUI {displayWaterAmount} {displayWaterTemp} {displayWaterGoal} {displayWaterConsumedToday} {displayMaxWaterCapacity} {sanitizationStatus} {powerBankBatteryPercentage} {waterIsStale} {volumeUnit} {tempUnit} {phoneBatteryPercentage} {isPowerBankCharging} bind:unitSystem = {unitSystem} bind:waterGoal = {waterGoal} bind:cleanDuration = {cleanDuration} bind:staleDuration = {staleDuration}/>
+      <!--
       <img class="bottle-sketch" src="WaterBottleSketchNew.png" alt="Water Bottle Sketch">
       <img class="bottle-lid" src="WaterBottleLidSketch.png" alt="Water Bottle Lid Sketch">
+      -->
     </section>
   </div>
 </div>
