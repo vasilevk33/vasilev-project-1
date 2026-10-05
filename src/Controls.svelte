@@ -1,48 +1,71 @@
 <script>
-    let { drink, refill, stale, empty, chargeBank, chargeDevice, displayGoal, volumeUnit, 
-        unitSystem = $bindable("Imperial"), waterGoal = $bindable(100), cleanDuration = $bindable(5), staleDuration = $bindable(10) 
+    let { drink, refill, stale, empty, chargeBank, chargeDevice, displayGoal, volumeUnit, toggleSimulation, isSimulating = $bindable(false), simulationAction = $bindable("Idle"),
+    unitSystem = $bindable("Imperial"), waterGoal = $bindable(100), cleanDuration = $bindable(5), staleDuration = $bindable(10) 
     } = $props();
 </script>
 
-<h2>Test Controls</h2>
-<button onclick={drink}>Drink (2 oz)</button>
+<h2>Controls</h2>
+<button onclick={drink}>Drink ({unitSystem === "Imperial" ? "2 oz" : "60 ml"})</button>
 <button onclick={refill}>Refill Water</button>
 <button onclick={stale}>Make Water Stale</button>
 <button onclick={empty}>Empty Water</button>
-<button onclick={chargeBank}>Charge Power Bank (100%)</button>
 <button onclick={chargeDevice}>Charge External Device</button>
+<button onclick={chargeBank}>Charge Power Bank (100%)</button>
+<div class="simulation-panel">
+  <h3>Simulation</h3>
+  <button onclick={toggleSimulation}>
+    {isSimulating ? "Pause Simulation" : "Start Simulation"}
+  </button>
+  <p>
+    Important Status Update: {simulationAction}
+  </p>
+</div>
 
-<h2>Phone Controls</h2>
-<label> Daily Goal: {displayGoal} {volumeUnit}
-<input type="range" min="80" max="180" step="2" bind:value={waterGoal} />
-</label>
-<label>
-  <input type="radio" bind:group={unitSystem} value="Imperial" />
-  Imperial
-</label>
-<label>
-  <input type="radio" bind:group={unitSystem} value="Metric" />
-  Metric
-</label>
-  
-<label>
-Clean Alert (Green Light): {cleanDuration}s
-<input 
-    type="range" 
-    min="1" 
-    max="30" 
-    step="1" 
-    bind:value={cleanDuration} 
-/>
-</label>
+<style>
+  button {
+    display: block;
+    width: 100%;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #f0f0f0;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
 
-<label>
-Stale Alert (Red Light): {staleDuration}s
-<input 
-    type="range" 
-    min="1" 
-    max="30" 
-    step="1" 
-    bind:value={staleDuration} 
-/>
-</label>
+  button:hover {
+    background: #e2e2e2;
+  }
+
+  .simulation-panel {
+    margin-top: 24px;
+    padding: 16px;
+    background: #eef6ff;
+    border: 1px solid #b9d7fb;
+    border-radius: 8px;
+  }
+
+  .simulation-panel h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+
+  .simulation-panel button {
+    background: #0284c7;
+    color: white;
+    border: none;
+  }
+
+  .simulation-panel button:hover {
+    background: #0369a1;
+  }
+
+  .simulation-panel p {
+    margin-bottom: 0;
+    font-size: 13px;
+    color: #333;
+  }
+</style>
