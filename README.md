@@ -1,8 +1,20 @@
 # Smart Water Bottle Documentation
 
+| Table of Contents |
+| -------- |
+| [Project Description](#project-description) |
+| [Design](#design) |
+| [Describing The Interface](#describing-the-interface) |
+| [Implementation](#implementation) |
+| [Future Work](#future-work) |
+| [AI Documentation](#ai-documentation) |
+| [Demo Video](#demo-video) |
+| [Link to Hosted Application](#link-to-hosted-application) |
+
 ## Project Description
 
 ## Design
+[⬆️ Back to Table of Contents](#smart-water-bottle-documentation)
 
 ### 1.) Characterizing the Affordances
 * Small, lightweight, and fully portable
@@ -155,16 +167,26 @@ Person 1 (Mom):
 Person 2 (Brother):  
 Person 3 (Friend): I like the push button for the spout a lot; it fixes that annoying water drip from the cap threads I deal with. The handle looks easy to clip into my backpack with a carabiner so it stops sliding out of the side pocket. The stale water alert is cool too, so I know when to dump it. My only worry is if the battery pack makes it feel too heavy in my bag, and if that flip cap stays shut tight so no dirt gets on the straw.  
 
-## Describing the Interface
-TODO: Make sure to mention role of the phone. Why have this secondary device?
+[⬆️ Back to Table of Contents](#smart-water-bottle-documentation)
+
+## Describing The Interface
+TODO: Make sure to mention role of the phone. Why have this secondary device?  
+
+[⬆️ Back to Table of Contents](#smart-water-bottle-documentation)
 
 ## Implementation
+[⬆️ Back to Table of Contents](#smart-water-bottle-documentation)
 
 ## Future Work
+[⬆️ Back to Table of Contents](#smart-water-bottle-documentation)
 
 ## AI Documentation
+[⬆️ Back to Table of Contents](#smart-water-bottle-documentation)
 
 ## Demo Video
+[⬆️ Back to Table of Contents](#smart-water-bottle-documentation)
 
 ## Link to Hosted Application
-[Hosted App](https://vasilev-project-1.vercel.app/)
+[Hosted App](https://vasilev-project-1.vercel.app/)  
+
+[⬆️ Back to Table of Contents](#smart-water-bottle-documentation)
