@@ -12,6 +12,7 @@
 | [Link to Hosted Application](#link-to-hosted-application) |
 
 ## Project Description
+[⬆️ Back to Table of Contents](#smart-water-bottle-documentation)
 
 ## Design
 [⬆️ Back to Table of Contents](#smart-water-bottle-documentation)
