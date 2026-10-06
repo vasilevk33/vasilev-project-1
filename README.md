@@ -137,18 +137,18 @@ Person 3 (Friend): If I'm not thirsty and I don’t have a headache.
 *Assumptions for 10-plus-10 Sketching:* I did one instance of 10-plus-10 sketching with all the design challenges incorporated instead of three seperate instances of 10-plus-10 sketching focusing on one design challenge per instance. For the second round of sketches of my 10-plus-10 I focused on specfic design challenges more as indicated by the DC label on the top left of the sketch (e.g. DC 2 focuses on design challenge 2).
 
 **First Round Sketches**
-Todo: Pic 1
-Todo: Pic 2  
+<img width="3917" height="2815" alt="1" src="https://github.com/user-attachments/assets/f470f977-b899-4d55-b90e-30a19da4d0b0" />
+<img width="3939" height="2759" alt="2" src="https://github.com/user-attachments/assets/b83d9fc7-32f7-41e0-aa1e-ea8bc2ff1458" />
 
 **Second Round Sketches**
-Todo: Pic 1
-Todo: Pic 2  
+<img width="3851" height="2740" alt="3" src="https://github.com/user-attachments/assets/c3675353-4c46-440c-aa37-7150ddd59bad" />
+<img width="3803" height="2647" alt="4" src="https://github.com/user-attachments/assets/72540739-5ec7-4bcf-9c86-8c76f2b1843f" />
 
 ### 6.) Sketching the Interface (“The Vanilla Sketch”)
-Todo: Pic
+<img width="3187" height="2489" alt="vanilla" src="https://github.com/user-attachments/assets/4bc59e2e-9a01-4e8f-b873-6e0f811b5abe" />
 
 ### 7.) Hybrid Sketch
-Todo: Pic
+<img width="4032" height="2599" alt="hybridsketch (1)" src="https://github.com/user-attachments/assets/6aa3c088-cadf-40b8-ae4c-39e37f4f1458" />
 
 ### 8.) User Feedback
 Person 1 (Mom):  
