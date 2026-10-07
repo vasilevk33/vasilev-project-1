@@ -184,14 +184,14 @@ Person 3: I like the push button for the spout a lot; it fixes that annoying wat
 
 ## Describing The Interface
 ### 1. Overall View
-TODO: SC of Whole display  
+<img width="1917" height="1031" alt="1" src="https://github.com/user-attachments/assets/593047e1-10dc-449b-8fdc-f09084d5bcea" />
 
 #### **Two Regions:**  
 **Project Information & Controls (Left Region):** Contains general project information, link to documentation, the info button, manual controls (Buttons), and the simulation button.  
 **Device Interface (Right Region):** Displays the 3 visual cards representing the physical bottle surfaces (Front + Top View) and the mobile app interface.
 
 ### 2. Bottle Front View
-TODO: SC Of Bottle  
+<img width="472" height="910" alt="2" src="https://github.com/user-attachments/assets/dd5f4f75-05b1-430d-b58a-c59cac549964" />
 
 #### **Features:**
 * **Water Level LED Strip:** A liquid water level along the wall of the bottle that reflects real-time water volume. The illuminated blue bar scales proportionally from 0% to 100% of maximum capacity (40 oz / 1183 ml), and a numerical percentage label follows the top of the current fluid level.
@@ -199,7 +199,7 @@ TODO: SC Of Bottle
 * **Modular Power Bank Battery:** Located at the bottom of the bottle, this indicator displays the rechargeable base's remaining battery percentage. A pulsing animation on the battery indicates active charging.
 
 ### 3. Bottle Top View
-TODO: SC Of Cap  
+<img width="472" height="472" alt="3" src="https://github.com/user-attachments/assets/0202db97-659b-4076-b677-56cda02fe1ad" />
 
 #### **Features:**
 * **Sanitization Status Ring:** An outer LED ring communicating water purity and safety through 3 distinct states:
@@ -209,11 +209,10 @@ TODO: SC Of Cap
   * **Stale (Pulsing Red):** Alerts the user that water is stale and is not the purest it can be (Simulation Logic: water has rested at room temperature (≥70°F) for 10 seconds)
 * **Hydration Progress Ring:** An inner LED progress ring that advances clockwise as water is consumed, showing progress toward the daily hydration goal with a percentage label following the progress.
 
-### 4. Phone App (Secondary Device)
-TODO: SC Of Phone  
+### 4. Phone App (Secondary Device) 
+<img width="476" height="915" alt="4" src="https://github.com/user-attachments/assets/13252515-fa63-40b2-9e66-778cefd2b987" />
 
 The phone app represents an interactive secondary device operating over Bluetooth connection to handle user preferences and display Smart Water Bottle telemetry.   
-
 #### **Features & Controls:**
 * **Connection & Battery:** Features a Bluetooth status indicator and the phone's current battery percentage with a visual battery icon.
 * **Basic Telemetry:** Displays exact remaining volume in bottle and current goal progress formatted in the active unit system.
@@ -226,8 +225,8 @@ The phone app represents an interactive secondary device operating over Bluetoot
 2. **Visuals vs. Configuration:** The physical bottle is optimized for clear visual cues while working out or on the go (LED ring color, liquid fill line, temperature readout). The phone app provides personalization (setting custom goals, tuning alert durations, and switching units).
 3. **Bottle to Phone Connection:** Changes on the phone (such as unit preferences or alert times) propagate immediately to the physical bottle system. Bottle actions (drinking, refilling, emptying) instantly mirror on the phone display. The phone can also be charged by the detachable power bank located on the bottle.
 
-### 5. Testing Controls
-TODO: SC of Controls  
+### 5. Testing Controls  
+<img width="397" height="660" alt="5" src="https://github.com/user-attachments/assets/731a8290-5632-4ad2-9086-165486a6460c" />
 
 The left region provides controls for validating bottle behavior manually and through a simulation.  
 
@@ -252,17 +251,17 @@ The left region provides controls for validating bottle behavior manually and th
   * Clicking **Pause Simulation** after clicking **Start Simulation** pauses the simulation.
   * There is a status update below the **Pause Simulation** button that informs the user of critical actions happening (Nothing Yet ..., Refilled water!, Emptied stale water!, Charging device..., Charging power bank..., Paused, Goal reached!)
 
-### 6. Info Button
-TODO: SC of Info Button Output  
+### 6. Info Button  
+<img width="722" height="876" alt="6" src="https://github.com/user-attachments/assets/17a56742-1ce6-4c67-8ff3-b4bc7b7a6ed9" />
 
 Clicking the info button opens a pop-up describing all bottle features, sanitization logic, and controls similar to what is shown in this section of the documentation. 
 
 ### 7. Interface in Action
-**Bottle during active sanitization cycle (Yellow Light):**  
-TODO: SC of yellow  
+**Bottle during active sanitization cycle (Yellow Light):**   
+<img width="470" height="465" alt="7" src="https://github.com/user-attachments/assets/1c0447a1-823b-4235-97b1-50dba3edee93" />
 
 **Bottle after several drinks showing reduced water level and increased hydration goal progress on cap:**   
-TODO: SC of Cap after drink
+<img width="965" height="912" alt="8" src="https://github.com/user-attachments/assets/fd90c8f6-bdb1-49ed-9376-c4fa039b7b1e" />
 
 [⬆️ Back to Table of Contents](#smart-water-bottle-documentation)
 
