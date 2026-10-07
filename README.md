@@ -350,6 +350,8 @@ AI was used primarily to translate my ideas/sketches into HTML/CSS, the main use
 [⬆️ Back to Table of Contents](#smart-water-bottle-documentation)
 
 ## Demo Video
+[▶️ Click here to watch the video demo](https://drive.google.com/file/d/1LLCxdEXYO7S386HZgQptkDQ4-sQAEorS/view?usp=sharing)    
+
 [⬆️ Back to Table of Contents](#smart-water-bottle-documentation)
 
 ## Link to Repo and Hosted Application
